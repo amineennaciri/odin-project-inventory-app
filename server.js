@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
+const mongoose = require("mongoose");
 const ejs = require('ejs');
-const PORT = 8000;
 const mainRoutes = require('./routes/index');
+const postRoutes = require('./routes/post');
+const connectDB = require("./config/database");
+//Use .env file in config folder
+require("dotenv").config({ path: "./config/.env" });
+
+//Connect To Database
+connectDB();
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -11,8 +18,9 @@ app.use(express.json());
 
 
 app.use("/", mainRoutes);
-//app.use("/new", mainRoutes);
+//app.use("/post", postRoutes);
+app.use("/new", postRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
