@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Create a new form</h1>
-    <form action="/addItem" method="post">
+    <form action="addItem" method="post">
         <div>
             <label for="name">Enter a name:</label>
             <input type="text" name="name" id="name">
@@ -19,15 +19,27 @@
         </div>
         <div>
             <label for="price">Enter a price:</label>
-            <input type="text" name="price" id="price">
+            <input type="number" name="price" id="price">
         </div>
         <div>
             <label for="stock">Enter the stock N°:</label>
-            <input type="text" name="stock" id="stock">
+            <input type="number" name="stock" id="stock">
         </div>
         <div>
             <label for="url">Enter a url:</label>
             <input type="text" name="url" id="url">
+        </div>
+        <div>
+            <label for="category-select">Category:</label>
+            <select name="category" id="category-select">
+                <option value="">--Please choose a category--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
         </div>
         <button type="submit">Confirm</button>
     </form>

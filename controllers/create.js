@@ -23,12 +23,13 @@ module.exports = {
       },
       createItem: async (req, res) => {
         try {    
-          await Category.create({
+          await Item.create({
             name: req.body.name,
             description: req.body.description,
             url: req.body.url,
             price: req.body.price,
             stock: req.body.stock,
+            category: req.body.category,
           });
           console.log("Item was added!");
           res.redirect("/");

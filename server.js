@@ -18,7 +18,8 @@ app.use(express.json());
 
 
 app.use("/", mainRoutes);
-app.use("/", postRoutes);
+app.use("/new", postRoutes);
+app.use("/new", postRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)

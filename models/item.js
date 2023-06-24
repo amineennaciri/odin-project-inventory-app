@@ -13,7 +13,7 @@ const ItemSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  numberInStock: {
+  stock: {
     type: Number,
     required: true,
   },
@@ -21,10 +21,14 @@ const ItemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  category: {
+/*   category: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Categories",
-  },
+  } ,*/
+  category:{
+    type: String,
+    required: true,
+  }, 
   createdAt: {
     type: Date,
     default: Date.now,
