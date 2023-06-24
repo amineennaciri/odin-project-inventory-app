@@ -2,9 +2,11 @@ const Category = require("../models/category");
 const Item = require("../models/item");
 
 module.exports = {
-    getForm: (req,res)=>{
-      //res.render('formCategory.ejs')
-      res.send('<p>some html</p>');
+    getCategoryForm: (req,res)=>{
+      res.render('formCategory.ejs');
+    },
+    getItemForm: (req,res)=>{
+      res.render('formItem.ejs');
     },
     createCategory: async (req, res) => {
         try {    
@@ -13,7 +15,22 @@ module.exports = {
             description: req.body.description,
             url: req.body.url,
           });
-          console.log("Post has been added!");
+          console.log("Category was added!");
+          res.redirect("/");
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      createItem: async (req, res) => {
+        try {    
+          await Category.create({
+            name: req.body.name,
+            description: req.body.description,
+            url: req.body.url,
+            price: req.body.price,
+            stock: req.body.stock,
+          });
+          console.log("Item was added!");
           res.redirect("/");
         } catch (err) {
           console.log(err);

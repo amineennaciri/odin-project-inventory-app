@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 const createController = require('./../controllers/create');
 
-//router.get('/new', createController.getForm);
-router.post('/post', createController.createCategory);
-
-router.get('/new', (req, res) => {
-    res.render('formCategory.ejs');
-})
+router.get('/newCategory', createController.getCategoryForm);
+router.post('/addCategory', createController.createCategory);
+router.get('/newItem', createController.getItemForm);
+router.post('/addItem', createController.createItem);
 
 module.exports = router;
