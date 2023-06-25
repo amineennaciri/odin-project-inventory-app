@@ -5,4 +5,4 @@ This project is about building an inventory management app for an imaginary stor
 
 By the end of the project, I will have demonstrated skills in setting up a web app using node.js and express and a mongodb database.
 
-Self-reflection and conclusion:
+Self-reflection and conclusion: This was agreat opportunity to practice setting a full stack app with node.js, expresse and mongodb database with mongoose. 
