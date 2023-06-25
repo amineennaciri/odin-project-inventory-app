@@ -1,6 +1,7 @@
 const Category = require("../models/category");
 const Item = require("../models/item");
 
+
 module.exports = {
     getCategoryForm: (req,res)=>{
       res.render('formCategory.ejs');
